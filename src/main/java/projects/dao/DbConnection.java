@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import projects.exception.DbException;
+
 public class DbConnection {
 private static final String SCHEMA = "projects";
 private static final String USER = "projects";
@@ -12,7 +14,7 @@ private static final String HOST ="localhost";
 private static final int PORT = 3306 ;
 
 public static Connection getconnection() {
-	String url= String.format("jdbl:mysql://%s:%d/%s?user=5s&password=%s&useSSL=false",HOST,PORT,SCHEMA,USER,PASSWORD);
+	String url= String.format("jdbc:mysql://%s:%d/%s?user=%s&password=%s&useSSL=false",HOST,PORT,SCHEMA,USER,PASSWORD);
 	System.out.println("Connecting with url=" + url);
 	
 	try {
